@@ -4,6 +4,9 @@ alias -g C='| xsel --input --clipboard'
 alias gzcat='zcat'
 alias ssh='LC_PWD=$PWD ssh -o SendEnv=LC_PWD'
 
+# tmux
+alias t='/usr/bin/tmux'
+
 # directory alias
 hash -d larch=/mnt/larch/kodama  # ~larch
 hash -d hinoki=/mnt/hinoki/kodama  # ~hinoki
