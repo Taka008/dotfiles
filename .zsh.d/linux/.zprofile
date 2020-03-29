@@ -12,13 +12,13 @@ fi
 export SSH_AUTH_SOCK="$SSH_AUTH_SOCK_LINK"
 
 # ログインした時自動で tmux attach
-if [[ -z "$TMUX" && -z "$STY" ]]; then
-  client=$(tmux list-client 2>/dev/null)
-  # セッションが存在し、まだ attach してなかったら attach
-  if [[ $? -eq 0 && -z $client ]]; then
-    tmux -CC new -A -s main
-  fi
-fi
+# if [[ -z "$TMUX" && -z "$STY" ]]; then
+#   client=$(tmux list-client 2>/dev/null)
+#   # セッションが存在し、まだ attach してなかったら attach
+#   if [[ $? -eq 0 && -z $client ]]; then
+#     tmux -CC new -A -s main
+#   fi
+# fi
 
 # 別のマシンに移動した時カレントディレクトリを維持
 if [[ -n "$LC_PWD" && "$(readlink -f $PWD)" != "$(readlink -f $LC_PWD)" && -e "$LC_PWD" ]]; then
