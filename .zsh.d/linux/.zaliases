@@ -1,0 +1,11 @@
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+alias -g C='| xsel --input --clipboard'
+alias gzcat='zcat'
+alias ssh='LC_PWD=$PWD ssh -o SendEnv=LC_PWD'
+
+# directory alias
+hash -d larch=/mnt/larch/kodama  # ~larch
+hash -d hinoki=/mnt/hinoki/kodama  # ~hinoki
+hash -d elm=/mnt/elm/kodama  # ~elm
+hash -d pear=/mnt/pear/kodama  # ~pear

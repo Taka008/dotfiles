@@ -1,0 +1,77 @@
+setopt complete_aliases
+
+alias ls='ls -F --color=tty'   # or exa -F
+alias ll='ls -lF --color=tty'  # or exa -lF
+alias la='ls -aF --color=tty' # or exa -laF
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias h='history'
+alias g='git'
+alias gb="git branch"
+alias gd="git diff"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias -g H='| head'
+alias -g T='| tail'
+alias -g W='| wc'
+alias -g G='| grep'
+alias -g L='| wc -l'
+alias wl='wc -l'
+alias gomi='rm -f *~'
+alias relogin='exec $SHELL -l'
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -- -='cd -'
+alias -- --='cd --'
+## http://keisanbutsuriya.hateblo.jp/entry/2015/02/13/133858
+alias e='emacsclient -nw -a ""'
+alias emacs='emacsclient -nw -a ""'
+alias ekill='emacsclient -e "(kill-emacs)"'
+alias dpython='python -m ipdb -c continue'
+alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
+alias rename="noglob zmv -W"  # rename **/*.xxx **/*.yyy
+
+if (type colordiff &> /dev/null); then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
+
+# alias du="du -h"
+# alias df="df -h"
+
+# AUTO OPEN
+alias -s zip=zipinfo
+alias -s tgz=gzcat
+alias -s gz=gzcat
+alias -s xz=xzcat
+alias -s tbz=bzcat
+alias -s bz2=bzcat
+alias -s java=lv
+alias -s c=lv
+alias -s h=lv
+alias -s C=lv
+alias -s txt=lv
+alias -s cpp=lv
+alias -s txt=lv
+alias -s xml=lv
+alias -s html=google-crhome
+alias -s xhtml=google-chrome
+
+globalias() {
+  if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
+    zle _expand_alias
+    # zle expand-word
+  fi
+  zle self-insert
+}
+zle -N globalias
+bindkey " " globalias
+
+# brew
+alias brew="env -u LD_LIBRARY_PATH PATH=${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin:/usr/bin:/bin:/usr/sbin:/sbin brew"
+
+source ${ZSHHOME}/.zaliases

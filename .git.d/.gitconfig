@@ -1,0 +1,47 @@
+[user]
+    name = Taka008
+    email = kodama@nlp.ist.i.kyoto-u.ac.jp
+
+[alias]
+    s = status
+    df = diff
+    dfc = diff --cached
+    co = checkout
+    cob = checkout -b
+    bra = branch
+    cm = commit -m
+    cam = commit -a -m
+    com = checkout master
+    unstage = reset HEAD --
+    last = log -1 HEAD
+
+    # git l で綺麗に過去の履歴が見れる
+    l = log --graph --pretty='%C(yellow)%h%Creset %C(cyan bold)%d%Creset %s %Cgreen[%cd] %C(bold blue)<%an> %Creset' --decorate --date=iso
+
+[color]
+    ui = true
+
+[core]
+    editor = emacsclient -nw
+
+[pager]
+    branch = cat
+	diff = (diff-highlight 2>/dev/null || cat) | less -+F -+X -R
+	show = (diff-highlight 2>/dev/null || cat) | less -+F -+X -R
+	log  = (diff-highlight 2>/dev/null || cat) | less -+F -+X -R
+
+[merge]
+    ff = false
+
+[pull]
+    ff = only
+
+[diff]
+	indentHeuristic = true
+
+[interactive]
+	diffFilter = diff-highlight
+
+[color "diff-highlight"]
+oldHighlight = "red bold"
+newHighlight = "green bold"
