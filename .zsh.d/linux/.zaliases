@@ -6,6 +6,7 @@ alias ssh='LC_PWD=$PWD ssh -o SendEnv=LC_PWD'
 
 # tmux
 alias t='/usr/bin/tmux'
+alias ta='/usr/bin/tmux attach'
 
 # directory alias
 hash -d larch=/mnt/larch/kodama  # ~larch
