@@ -45,3 +45,8 @@
 [color "diff-highlight"]
 oldHighlight = "red bold"
 newHighlight = "green bold"
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
