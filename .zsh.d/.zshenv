@@ -54,9 +54,9 @@ path=(${HOME}/.poetry/bin(N-/) ${path})
 # Homebrew/Linuxbrew で prefix のパスが違う。
 # $(brew --prefix) は時間がかかる処理であるため、ここで判定して HOMEBREW_PREFIX に格納する。
 if [[ -d ${HOME}/.linuxbrew ]]; then
-  HOMEBREW_PREFIX=${HOME}/.linuxbrew
+  HOMEBREW_PREFIX=$(readlink -f ${HOME}/.linuxbrew)
 elif [[ -d /home/.linuxbrew ]]; then
-  HOMEBREW_PREFIX=/home/.linuxbrew
+  HOMEBREW_PREFIX=$(readlink -f /home/.linuxbrew)
 elif [[ -x /usr/local/bin/brew ]]; then
   HOMEBREW_PREFIX="/usr/local"
 fi
@@ -112,16 +112,6 @@ esac
 # load environment specific configurations
 source ${ZSHHOME}/.zshenv
 
-if [[ -n ${HOMEBREW_PREFIX} ]]; then
-  # Homebrew の PATH の解決をここで行う。
-  export HOMEBREW_PREFIX
-  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
-  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
-  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
-  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
-  export INFOPATH="${HOMEBREW_PREFIX}/share/info${INFOPATH+:$INFOPATH}"
-fi
-
 
 path=(
   ${HOME}/.local/bin(N-/)
@@ -135,6 +125,17 @@ manpath=(
   ${HOME}/usr/share/man(N-/)
   ${manpath}
 )
+
+
+if [[ -n ${HOMEBREW_PREFIX} ]]; then
+  # Homebrew の PATH の解決をここで行う。
+  export HOMEBREW_PREFIX
+  export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"
+  export HOMEBREW_REPOSITORY="${HOMEBREW_PREFIX}/Homebrew"
+  export PATH="${HOMEBREW_PREFIX}/bin:${HOMEBREW_PREFIX}/sbin${PATH+:$PATH}"
+  export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
+  export INFOPATH="${HOMEBREW_PREFIX}/share/info${INFOPATH+:$INFOPATH}"
+fi
 
 
 # my scripts
