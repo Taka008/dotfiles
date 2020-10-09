@@ -18,6 +18,7 @@ path=(
   /usr/sbin(N-/)
   /bin(N-/)
   /sbin(N-/)
+  ${path:#${HOME}/*}(N-/)
 )
 
 # PATH FOR MAN(MANUAL)
