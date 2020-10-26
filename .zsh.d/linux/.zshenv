@@ -25,11 +25,10 @@ export XDG_CACHE_HOME=$HOME/.cache
 # export XDG_RUNTIME_DIR=
 
 # pyenv
-export PYENV_ROOT=$HOME/.pyenv
+# export PYENV_ROOT=$HOME/.pyenv
 
 path=(
   ${HOME}/gxp3(N-/)  # GXP3
-  ${PYENV_ROOT}/bin(N-/)  # pyenv
   /share/usr-$(uname -m)/bin(N-/)
   ${path}
 )
