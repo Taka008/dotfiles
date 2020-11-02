@@ -1,5 +1,5 @@
 # baracuda, moss, saffron 設定
-if [[ $(uname -n) =~ "^baracuda" ]] || [[ $(uname -n) =~ "^moss" ]] || [[ $(uname -n) = "saffron" ]]; then
+if [[ $(uname -n) =~ "^baracuda" ]] || [[ $(uname -n) =~ "^moss" ]] || [[ $(uname -n) = "^saffron" ]]; then
   export CUDA_HOME=/usr/local/cuda
   export CUDA_PATH=/usr/local/cuda
   export PATH=/usr/local/bin:$CUDA_HOME/bin:$PATH
@@ -8,13 +8,13 @@ if [[ $(uname -n) =~ "^baracuda" ]] || [[ $(uname -n) =~ "^moss" ]] || [[ $(unam
 fi
 
 # Boost
-typeset -xT LD_LIBRARY_PATH ld_library_path  # LD_LIBRARY_PATH を unset すると色々なプログラムの実行が少し速くなる
-typeset -U ld_library_path
-ld_library_path=(
-  $HOME/usr/lib/x86_64-linux-gnu(N-/)
-  $HOME/usr/lib(N-/)
-  $ld_library_path
-)
+# typeset -xT LD_LIBRARY_PATH ld_library_path  # LD_LIBRARY_PATH を unset すると色々なプログラムの実行が少し速くなる
+# typeset -U ld_library_path
+# ld_library_path=(
+#   $HOME/usr/lib/x86_64-linux-gnu(N-/)
+#   $HOME/usr/lib(N-/)
+#   $ld_library_path
+# )
 
 # XDG Base Directory Specification (Ubuntu specific)
 export XDG_DATA_HOME=$HOME/.local/share

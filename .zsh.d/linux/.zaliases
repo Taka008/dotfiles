@@ -4,6 +4,9 @@ alias -g C='| xsel --input --clipboard'
 alias gzcat='zcat'
 alias ssh='LC_PWD=$PWD ssh -o SendEnv=LC_PWD'
 
+# python
+alias python=/mnt/berry/home/kodama/.linuxbrew/Cellar/python@3.8/3.8.5/bin/python3.8
+
 # tmux
 alias t='/usr/bin/tmux'
 alias ta='/usr/bin/tmux attach'
