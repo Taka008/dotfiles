@@ -85,7 +85,7 @@ brew install readline
 brew install nkf
 # brew install jumanpp  # old
 brew install pipenv
-brew install pyenv
+# brew install pyenv
 brew install python
 brew install sshfs # maybe after osxfuse
 brew install zlib
