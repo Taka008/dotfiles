@@ -26,6 +26,12 @@ manpath=(
 # pyenv
 # export PYENV_ROOT=/usr/local/var/pyenv
 
+# python
+path=(
+  ${HOMEBREW_PREFIX}/opt/python/libexec/bin(N-/)
+  ${path}
+)
+
 ## other tool paths
 path=(
   ${HOME}/.nodebrew/current/bin(N-/)  # nodebrew
