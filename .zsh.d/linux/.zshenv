@@ -30,6 +30,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 path=(
   ${HOME}/gxp3(N-/)  # GXP3
   /share/usr-$(uname -m)/bin(N-/)
+  ${HOMEBREW_PREFIX}/bin(N-/)
   ${path}
 )
 
