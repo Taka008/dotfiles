@@ -23,12 +23,9 @@ manpath=(
   ${manpath}
 )
 
-# pyenv
-# export PYENV_ROOT=/usr/local/var/pyenv
-
 # python
 path=(
-  ${HOMEBREW_PREFIX}/opt/python/libexec/bin(N-/)
+  /usr/local/opt/python@3.8/libexec/bin(N-/)
   ${path}
 )
 

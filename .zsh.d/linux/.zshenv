@@ -22,14 +22,11 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_DIRS=$HOMEBREW_PREFIX/share:/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=$HOME/.cache
-# export XDG_RUNTIME_DIR=
-
-# pyenv
-# export PYENV_ROOT=$HOME/.pyenv
 
 path=(
   ${HOME}/gxp3(N-/)  # GXP3
   /share/usr-$(uname -m)/bin(N-/)
+  ${HOMEBREW_PREFIX}/opt/python@3.8/libexec/bin(N-/)  # python
   ${HOMEBREW_PREFIX}/bin(N-/)
   ${path}
 )
