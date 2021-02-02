@@ -16,3 +16,4 @@ hash -d larch=/mnt/larch/kodama  # ~larch
 hash -d hinoki=/mnt/hinoki/kodama  # ~hinoki
 hash -d elm=/mnt/elm/kodama  # ~elm
 hash -d pear=/mnt/pear/kodama  # ~pear
+hash -d zamia=/mnt/zamia/kodama # ~zamia
