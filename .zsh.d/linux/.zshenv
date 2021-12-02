@@ -25,6 +25,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 
 path=(${HOMEBREW_PREFIX}/bin(N-/) ${path})
 
+# shared linuxbrew
 if [[ -e /home/linuxbrew/.linuxbrew ]]; then
   prefix="/home/linuxbrew/.linuxbrew"
   path=(${prefix}/{bin,sbin}(N-/) ${path})

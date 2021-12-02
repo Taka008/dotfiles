@@ -41,13 +41,6 @@ if [[ $(id -u) -eq 0 ]]; then  # root user
 fi
 
 
-# Golang
-if [[ -d ${HOME}/.go ]]; then
-  export GOPATH=${HOME}/.go
-  path=(${GOPATH}/bin(N-/) ${path})
-fi
-
-
 # Poetry
 path=(${HOME}/.poetry/bin(N-/) ${path})
 
@@ -110,10 +103,6 @@ freebsd*|darwin*)
   ;;
 esac
 
-# load environment specific configurations
-source ${ZSHHOME}/.zshenv
-
-
 path=(
   ${HOME}/.local/bin(N-/)
   ${HOME}/local/bin(N-/)
@@ -137,6 +126,9 @@ if [[ -n ${HOMEBREW_PREFIX} ]]; then
   export MANPATH="${HOMEBREW_PREFIX}/share/man${MANPATH+:$MANPATH}:"
   export INFOPATH="${HOMEBREW_PREFIX}/share/info${INFOPATH+:$INFOPATH}"
 fi
+
+# load environment specific configurations
+source ${ZSHHOME}/.zshenv
 
 
 # my scripts
