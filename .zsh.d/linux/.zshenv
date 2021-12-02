@@ -23,20 +23,28 @@ export XDG_DATA_DIRS=$HOMEBREW_PREFIX/share:/usr/local/share:/usr/share
 export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_CACHE_HOME=$HOME/.cache
 
-path=(
-  ${HOME}/gxp3(N-/)  # GXP3
-  /share/usr-$(uname -m)/bin(N-/)
-  ${HOMEBREW_PREFIX}/opt/python@3.8/libexec/bin(N-/)  # python
-  ${HOMEBREW_PREFIX}/bin(N-/)
-  ${path}
-)
+path=(${HOMEBREW_PREFIX}/bin(N-/) ${path})
 
-# # ubrew
-# if [[ -e /mnt/orange/ubrew/data ]]; then
-#   export PATH="/mnt/orange/ubrew/data/bin:$PATH"
-#   export MANPATH="/mnt/orange/ubrew/data/share/man:$MANPATH"
-#   export INFOPATH="/mnt/orange/ubrew/data/share/info:$INFOPATH"
-# fi
+if [[ -e /home/linuxbrew/.linuxbrew ]]; then
+  prefix="/home/linuxbrew/.linuxbrew"
+  path=(${prefix}/{bin,sbin}(N-/) ${path})
+  manpath=(${prefix}/share/man(N-/) ${manpath})
+  infopath=(${prefix}/share/info(N-/) ${infopath})
+  fpath=(${prefix}/share/zsh/site-functions(N-/) ${fpath})
+fi
+if [[ -e /home/linuxbrew/usr ]]; then
+  prefix="/home/linuxbrew/usr"
+  path=(${prefix}/{bin,sbin}(N-/) ${path})
+  manpath=(${prefix}/share/man(N-/) ${manpath})
+  infopath=(${prefix}/share/info(N-/) ${infopath})
+  fpath=(${prefix}/share/zsh/{functions,site-functions}(N-/) ${fpath})
+fi
+
+# gxp3
+path=(${HOME}/gxp3(N-/) ${path})
+
+# python3.8
+path=(${HOMEBREW_PREFIX}/opt/python@3.8/libexec/bin(N-/) ${path})
 
 
 # Skip the not really helping Ubuntu global compinit
