@@ -23,9 +23,9 @@ manpath=(
   ${manpath}
 )
 
-# python
+# use python3.9
 path=(
-  /usr/local/opt/python@3.8/libexec/bin(N-/)
+  /usr/local/opt/python@3.9/libexec/bin(N-/)
   ${path}
 )
 

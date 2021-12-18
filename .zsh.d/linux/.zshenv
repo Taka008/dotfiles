@@ -44,8 +44,8 @@ fi
 # gxp3
 path=(${HOME}/gxp3(N-/) ${path})
 
-# python3.8
-path=(${HOMEBREW_PREFIX}/opt/python@3.8/libexec/bin(N-/) ${path})
+# use python3.9
+path=(${HOMEBREW_PREFIX}/opt/python@3.9/libexec/bin(N-/) ${path})
 
 
 # Skip the not really helping Ubuntu global compinit
