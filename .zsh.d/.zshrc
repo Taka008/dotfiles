@@ -201,6 +201,7 @@ zinit ice wait"1" lucid from"gh-r" as"program" mv"exa* -> exa"
 zinit light ogham/exa
 
 # direnv
+EDITOR="vim"
 eval "$(direnv hook zsh)"
 
 # sharkdp/fd, replacement for find

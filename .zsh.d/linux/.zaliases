@@ -17,3 +17,8 @@ hash -d hinoki=/mnt/hinoki/kodama   # ~hinoki
 hash -d elm=/mnt/elm/kodama         # ~elm
 hash -d pear=/mnt/pear/kodama       # ~pear
 hash -d zamia=/mnt/zamia/kodama     # ~zamia
+
+# nvidia-smi
+alias ns="nvidia-smi --query-gpu=timestamp,index,name,memory.used,memory.total,utilization.gpu --format=csv | column -s, -t"
+alias nsp="nvidia-smi --query-compute-apps=pid,name,used_memory --format=csv | column -s, -t"
+alias nspid="nvidia-smi --query-compute-apps=pid --format=csv,noheader"
