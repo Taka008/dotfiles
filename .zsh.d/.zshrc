@@ -201,22 +201,7 @@ zinit ice wait"1" lucid from"gh-r" as"program" mv"exa* -> exa"
 zinit light ogham/exa
 
 # direnv
-zinit ice as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' pick"direnv" src"zhook.zsh"
-zinit light direnv/direnv
-p=$PWD
-while  [[ $p != '/' ]]; do
-  if [[ -f $p/.envrc ]]; then
-    direnv allow
-    break
-  fi
-  p=$(dirname $p)
-done
-
-# pyenv
-# zinit ice wait'1' lucid atclone'./libexec/pyenv init - > zpyenv.zsh' atpull"%atclone" \
-#     as'command' pick'bin/pyenv' src"zpyenv.zsh" nocompile'!'
-# zinit light pyenv/pyenv
+eval "$(direnv hook zsh)"
 
 # sharkdp/fd, replacement for find
 zinit ice wait"1" lucid as"command" from"gh-r" mv"fd* -> fd" pick"fd/fd"
@@ -316,11 +301,6 @@ peco-find-file() {
 }
 zle -N peco-find-file
 bindkey '^_' peco-find-file  # works by ^/
-
-# pyenv
-# if (type pyenv &> /dev/null); then
-#     eval "$(pyenv init -)"  # 自動補完機能
-# fi
 
 # unset all environment variables and restart shell
 resetenv() {

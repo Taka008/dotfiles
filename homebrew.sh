@@ -42,15 +42,10 @@ fi
 # Install `wget` with IRI support.
 brew install wget --with-iri
 
-# Install GnuPG to enable PGP-signing commits.
-# brew install gnupg
-
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
 brew install grep
 brew install openssh
-# brew install php
-# brew install gmp
 brew install zgip
 brew install gawk
 brew install git
@@ -63,7 +58,7 @@ brew install emacs
 # brew install woff2
 
 # Install other useful binaries.
-#brew install exiv2
+# brew install exiv2
 # brew install git-lfs
 # brew install gs
 brew install imagemagick --with-webp
@@ -83,17 +78,16 @@ brew install docker
 brew install htop
 brew install readline
 brew install nkf
-# brew install jumanpp  # old
 brew install pipenv
 # brew install pyenv
 brew install python
 brew install sshfs # maybe after osxfuse
 brew install zlib
 brew install st # statistics
-brew install go
 brew install peco
 brew install ripgrep
 brew install procs  # alternative of ps
+brew install direnv
 
 # Cask
 brew tap caskroom/cask
