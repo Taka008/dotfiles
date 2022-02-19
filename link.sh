@@ -12,6 +12,7 @@ ln -sf ~/dotfiles/.git.d/.gitignore_global ~/.config/git/ignore
 ln -sf ~/dotfiles/.peco/config.json ~/.config/peco/config.json
 ln -sf ~/dotfiles/.config/fsh ~/.config/
 ln -sf ~/dotfiles/.latexmkrc ~/.latexmkrc
+ln -sf ~/dotfiles/.tmux.d/.tmux.conf ~/.tmux.conf
 
 case "${OSTYPE}" in
 linux* | cygwin*) ;;
