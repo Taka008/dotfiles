@@ -22,13 +22,12 @@
     ui = true
 
 [core]
+    # git-delta (https://github.com/dandavison/delta)
+    pager = delta
     editor = emacsclient -nw
 
 [pager]
     branch = cat
-	diff = (diff-highlight 2>/dev/null || cat) | less -+F -+X -R
-	show = (diff-highlight 2>/dev/null || cat) | less -+F -+X -R
-	log  = (diff-highlight 2>/dev/null || cat) | less -+F -+X -R
 
 [merge]
     ff = false
@@ -40,11 +39,19 @@
 	indentHeuristic = true
 
 [interactive]
-	diffFilter = diff-highlight
+    diffFilter = delta --color-only
 
-[color "diff-highlight"]
-oldHighlight = "red bold"
-newHighlight = "green bold"
+[delta]
+    navigate = true     # use n and N to move between diff sections
+    line-numbers = true
+    side-by-side = true
+    syntax-theme = Dracula
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
 
 [filter "lfs"]
 	process = git-lfs filter-process
