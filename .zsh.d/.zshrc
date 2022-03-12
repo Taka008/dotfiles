@@ -278,9 +278,9 @@ peco-cdr() {
   fi
 }
 zle -N peco-cdr
-bindkey '^x' peco-cdr
+bindkey '^h' peco-cdr
 
-# cdr設定(pecoの'^x'に必要)
+# cdr設定(pecoの'^h'に必要)
 autoload -Uz chpwd_recent_dirs cdr
 add-zsh-hook chpwd chpwd_recent_dirs
 zstyle ':chpwd:*' recent-dirs-max 2000
