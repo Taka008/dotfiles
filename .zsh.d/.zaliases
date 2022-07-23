@@ -6,6 +6,7 @@ alias la='ls -aF --color=tty' # or exa -laF
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+alias rp='realpath'
 alias h='history'
 alias g='git'
 alias gb="git branch"
