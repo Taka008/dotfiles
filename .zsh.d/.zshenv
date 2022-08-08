@@ -81,8 +81,8 @@ export EDITOR=emacsclient
 
 
 # PIPENV
-if [[ -d /mnt/berry_f/home ]]; then
-  export WORKON_HOME=/mnt/berry_f/home/kodama/.virtualenvs  # use cached directory for virtualenv
+if [[ -d /mnt/poppy_f/home ]]; then
+  export WORKON_HOME=/mnt/poppy_f/home/kodama/.virtualenvs  # use cached directory for virtualenv
 else
   export PIPENV_VENV_IN_PROJECT=true  # pipenv で仮想環境をプロジェクト直下に作るように
 fi
