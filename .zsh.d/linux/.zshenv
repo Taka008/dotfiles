@@ -19,10 +19,9 @@ path=(${HOMEBREW_PREFIX}/bin(N-/) ${path})
 # shared linuxbrew
 if [[ -e /home/linuxbrew/.linuxbrew ]]; then
   prefix="/home/linuxbrew/.linuxbrew"
-  path=(${prefix}/{bin,sbin}(N-/) ${path})
-  manpath=(${prefix}/share/man(N-/) ${manpath})
-  infopath=(${prefix}/share/info(N-/) ${infopath})
-  fpath=(${prefix}/share/zsh/site-functions(N-/) ${fpath})
+  export PATH="${prefix}/opt/python@3.9/libexec/bin:${prefix}/bin:${PATH}"
+  export MANPATH="${prefix}/share/man:${MANPATH}"
+  export INFOPATH="${prefix}/share/info:${INFOPATH}"
 fi
 if [[ -e /home/linuxbrew/usr ]]; then
   prefix="/home/linuxbrew/usr"
@@ -36,7 +35,7 @@ fi
 path=(${HOME}/gxp3(N-/) ${path})
 
 # use python3.9
-path=(${HOMEBREW_PREFIX}/opt/python@3.9/libexec/bin(N-/) ${path})
+# path=(${HOMEBREW_PREFIX}/opt/python@3.9/libexec/bin(N-/) ${path})
 
 
 # Skip the not really helping Ubuntu global compinit
