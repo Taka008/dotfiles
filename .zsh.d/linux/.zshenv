@@ -4,7 +4,7 @@ if [[ -d /usr/local/cuda ]]; then
   export CUDA_PATH="${CUDA_HOME}"
   export PATH="${CUDA_HOME}/bin:${PATH}"
   # export LD_LIBRARY_PATH="${CUDA_HOME}/lib64:/usr/local/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}"  #
-  export LD_LIBRARY_PATH="${CUDA_HOME}/lib64:/usr/local/lib/x86_64-linux-gnu"
+  export LD_LIBRARY_PATH="${CUDA_HOME}/lib64:/usr/local/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu"
   export CUDA_DEVICE_ORDER="PCI_BUS_ID"
 fi
 
