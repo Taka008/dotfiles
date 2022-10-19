@@ -382,5 +382,5 @@ fi
 
 # kurolab
 if [[ -d /mnt/poppy/home ]]; then
-  source "${ZBASEDIR}/kurolab/.zshenv"
+  source "${ZBASEDIR}/kurolab/.zshrc"
 fi

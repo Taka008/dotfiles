@@ -111,6 +111,13 @@ if [[ -n ${HOMEBREW_PREFIX} ]]; then
   fpath=(${HOMEBREW_PREFIX}/share/zsh/{functions,site-functions}(N-/) ${fpath})
 fi
 
+#
+# kurolab
+#
+if [[ -d /mnt/poppy/home ]]; then
+  source "${ZBASEDIR}/kurolab/.zshenv"
+fi
+
 path=(
   ${HOME}{/.local,/local,/usr}/bin(N-/)
   ${path}
