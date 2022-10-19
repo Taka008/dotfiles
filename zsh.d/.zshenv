@@ -76,10 +76,6 @@ freebsd*|darwin*)
   ;;
 esac
 
-# load environment specific configurations
-source "${ZSHHOME}/.zshenv"
-
-
 ## lv setting
 export LV="-c -l"
 
@@ -108,20 +104,9 @@ export PYTEST_ADDOPTS='-v -s --ff'
 # zmv
 autoload -Uz zmv
 
-# load Homebrew-related variables
-if [[ -n ${HOMEBREW_PREFIX} ]]; then
-  path=(${HOMEBREW_PREFIX}/{bin,sbin}(N-/) ${path})
-  manpath=(${HOMEBREW_PREFIX}/share/man(N-/) ${manpath})
-  infopath=(${HOMEBREW_PREFIX}/share/info(N-/) ${infopath})
-  fpath=(${HOMEBREW_PREFIX}/share/zsh/{functions,site-functions}(N-/) ${fpath})
-fi
+# load environment specific configurations
+source "${ZSHHOME}/.zshenv"
 
-#
-# kurolab
-#
-if [[ -d /mnt/poppy/home ]]; then
-  source "${ZBASEDIR}/kurolab/.zshenv"
-fi
 
 # load Homebrew-related variables
 if [[ -n ${HOMEBREW_PREFIX} ]]; then

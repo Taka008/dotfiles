@@ -370,15 +370,15 @@ ls_abbrev() {
     fi
 }
 
-# LOAD SETTING FILES
-source ${ZSHHOME}/.zshrc
-
 if (which zprof > /dev/null 2>&1) ;then
   zprof
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# LOAD SETTING FILES
+source ${ZSHHOME}/.zshrc
 
 # kurolab
 if [[ -d /mnt/poppy/home ]]; then
