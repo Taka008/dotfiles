@@ -62,7 +62,7 @@ done
 # prefix for pip global install
 export PYTHONUSERBASE="$HOME/.local"
 
-ZBASEDIR="${DOTPATH%/}/zsh.d"
+ZBASEDIR="${DOTPATH%/}/.zsh.d"
 case "${OSTYPE}" in
 linux*|cygwin*)
   ZSHHOME="${ZBASEDIR}/linux"
