@@ -48,8 +48,7 @@ SELF="${(%):-%N}"
 DOTPATH="$(dirname "${SELF:A:h}")"
 
 
-# Homebrew/Linuxbrew で prefix のパスが違う。
-# $(brew --prefix) は時間がかかる処理であるため、ここで判定して HOMEBREW_PREFIX に格納する。
+# 環境によって HOMEBREW_PREFIX が異なるため候補の中から探索
 for prefix in "${HOME}/.linuxbrew" "/usr/local" "/opt/homebrew"; do
   if [[ -x "${prefix}/bin/brew" ]]; then
     export HOMEBREW_PREFIX="${prefix:A}"  # canonicalize
@@ -112,9 +111,7 @@ if [[ -n ${HOMEBREW_PREFIX} ]]; then
   fpath=(${HOMEBREW_PREFIX}/share/zsh/{functions,site-functions}(N-/) ${fpath})
 fi
 
-#
 # kurolab
-#
 if [[ -d /mnt/poppy/home ]]; then
   source "${ZBASEDIR}/kurolab/.zshenv"
 fi
