@@ -41,6 +41,7 @@ alias dpython='python -m ipdb -c continue'
 alias python='python3'
 alias zshtime='for i in $(seq 1 10); do time zsh -i -c exit; done'
 alias rename="noglob zmv -W"  # rename **/*.xxx **/*.yyy
+alias rsync='rsync -avhP --progress'
 
 if (type colordiff &> /dev/null); then
   alias diff='colordiff -u'
