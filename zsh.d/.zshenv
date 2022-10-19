@@ -7,17 +7,22 @@ export LANGUAGE=en_US
 export LC_CTYPE=${LANG}
 export LC_ALL=${LANG}
 
-# PATH(GENERAL)
-## zsh の機能で、path (array) は PATH と自動的に連動する
-## -U: 重複したパスを登録しない
+#
+# PATH
+#
+# zsh の機能で、path（array型シェル変数）は PATH（環境変数）と自動的に連動する
+# -U: 重複したパスを登録しない
+# HOME 以下の path は後で設定するので除外
+# (N-/): パスが存在しなければ追加しない
 typeset -U path
 path=(
   {/usr{/local,},}/{bin,sbin}(N-/)
   ${path:#${HOME}/*}(N-/)
 )
 
-
-# PATH FOR MAN(MANUAL)
+#
+# PATH FOR MAN (MANUAL)
+#
 typeset -U manpath
 manpath=(
   /usr{/local,}/share/man(N-/)
@@ -71,6 +76,9 @@ freebsd*|darwin*)
   ;;
 esac
 
+# load environment specific configurations
+source "${ZSHHOME}/.zshenv"
+
 
 ## lv setting
 export LV="-c -l"
@@ -100,8 +108,20 @@ export PYTEST_ADDOPTS='-v -s --ff'
 # zmv
 autoload -Uz zmv
 
-# load environment specific configurations
-source "${ZSHHOME}/.zshenv"
+# load Homebrew-related variables
+if [[ -n ${HOMEBREW_PREFIX} ]]; then
+  path=(${HOMEBREW_PREFIX}/{bin,sbin}(N-/) ${path})
+  manpath=(${HOMEBREW_PREFIX}/share/man(N-/) ${manpath})
+  infopath=(${HOMEBREW_PREFIX}/share/info(N-/) ${infopath})
+  fpath=(${HOMEBREW_PREFIX}/share/zsh/{functions,site-functions}(N-/) ${fpath})
+fi
+
+#
+# kurolab
+#
+if [[ -d /mnt/poppy/home ]]; then
+  source "${ZBASEDIR}/kurolab/.zshenv"
+fi
 
 # load Homebrew-related variables
 if [[ -n ${HOMEBREW_PREFIX} ]]; then
@@ -118,6 +138,9 @@ if [[ -d /mnt/poppy/home ]]; then
   source "${ZBASEDIR}/kurolab/.zshenv"
 fi
 
+#
+# general paths under $HOME
+#
 path=(
   ${HOME}{/.local,/local,/usr}/bin(N-/)
   ${path}
