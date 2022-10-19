@@ -7,8 +7,8 @@ fi
 
 
 # ALIAS
-if [[ -f $HOME/dotfiles/.zsh.d/.zaliases ]]; then
-  source $HOME/dotfiles/.zsh.d/.zaliases
+if [[ -f $HOME/dotfiles/zsh.d/.zaliases ]]; then
+  source $HOME/dotfiles/zsh.d/.zaliases
 fi
 
 # HOOK
@@ -145,9 +145,9 @@ ZINIT[COMPINIT_OPTS]=-C
 
 
 # other themes: dircolors.ansi-dark, dircolors.ansi-light, dircolors.256dark
-zinit ice atload'[[ -e $HOME/.zsh-dircolors.config ]] || setupsolarized dircolors.ansi-universal' \
+zinit ice atload'[[ -e $HOME/zsh.dircolors.config ]] || setupsolarized dircolors.ansi-universal' \
             atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
-zinit light 'joel-porquet/zsh-dircolors-solarized'
+zinit light 'joel-porquetzsh.dircolors-solarized'
 
 zinit ice wait"1" lucid
 zinit light zsh-users/zsh-history-substring-search
