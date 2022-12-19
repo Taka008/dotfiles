@@ -54,7 +54,7 @@ DOTPATH="$(dirname "${SELF:A:h}")"
 
 
 # 環境によって HOMEBREW_PREFIX が異なるため候補の中から探索
-for prefix in "${HOME}/.linuxbrew" "/usr/local" "/opt/homebrew"; do
+for prefix in "${HOME}/.linuxbrew" "/home/linuxbrew/.linuxbrew" "/opt/homebrew" "/usr/local"; do
   if [[ -x "${prefix}/bin/brew" ]]; then
     export HOMEBREW_PREFIX="${prefix:A}"  # canonicalize
     export HOMEBREW_CELLAR="${HOMEBREW_PREFIX}/Cellar"

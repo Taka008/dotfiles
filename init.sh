@@ -10,19 +10,24 @@ mkdir -p ~/.config/peco
 # install Homebrew/Linuxbrew if not installed
 if !(type brew &> /dev/null); then
   case "${OSTYPE}" in
-  linux* | cygwin*)
-    bash ${DOTPATH}/linuxbrew.sh
-    ;;
-  freebsd* | darwin*)
-    bash ${DOTPATH}/homebrew.sh
-    ;;
+    linux* | cygwin*)
+      HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-"${HOME}/.linuxbrew"}
+      ;;
+    freebsd* | darwin*)
+      if [[ $(uname -m) == "arm64" ]]; then
+        HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-"/opt/homebrew"}
+      else
+        # x86_64
+        HOMEBREW_PREFIX=${HOMEBREW_PREFIX:-"/usr/local"}
+      fi
+      ;;
   esac
 fi
 
 # install zinit
 if ! [[ -d ${HOME}/.zinit ]]; then
   mkdir ~/.zinit
-  git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+  git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 fi
 
 # install poetry

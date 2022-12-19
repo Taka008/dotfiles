@@ -16,7 +16,7 @@ manpath=(
 path=(
   /opt/X11/bin(N-/)  # X11
   /Library/Apple/usr/bin(N-/)
-  /usr/local/opt/python@3.10/libexec/bin(N-/)
+  /opt/homebrew/opt/python@3.10/libexec/bin(N-/)
   ${path}
 )
 
