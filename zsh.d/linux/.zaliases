@@ -5,7 +5,7 @@ alias gzcat='zcat'
 alias ssh='LC_PWD=$PWD ssh -o SendEnv=LC_PWD'
 
 # jumanpp & knp
-alias jumanpp='/mnt/poppy/home/linuxbrew/.local/bin/jumnapp'
+alias jumanpp='/mnt/poppy/home/linuxbrew/.local/bin/jumanpp'
 alias knp='/mnt/poppy/home/linuxbrew/.local/bin/knp'
 
 # python
