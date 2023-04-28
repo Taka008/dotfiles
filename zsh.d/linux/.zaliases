@@ -4,6 +4,10 @@ alias -g C='| xsel --input --clipboard'
 alias gzcat='zcat'
 alias ssh='LC_PWD=$PWD ssh -o SendEnv=LC_PWD'
 
+# jumanpp & knp
+alias jumanpp='/mnt/poppy/home/linuxbrew/.local/bin/jumnapp'
+alias knp='/mnt/poppy/home/linuxbrew/.local/bin/knp'
+
 # python
 # alias python=/mnt/poppy/home/kodama/.linuxbrew/bin/python3.9
 
@@ -17,6 +21,7 @@ hash -d hinoki=/mnt/hinoki/kodama   # ~hinoki
 hash -d elm=/mnt/elm/kodama         # ~elm
 hash -d pear=/mnt/pear/kodama       # ~pear
 hash -d zamia=/mnt/zamia/kodama     # ~zamia
+hash -d mint=/mnt/mint/kodama       # ~mint
 
 # nvidia-smi
 alias ns="nvidia-smi --query-gpu=timestamp,index,name,memory.used,memory.total,utilization.gpu --format=csv | column -s, -t"

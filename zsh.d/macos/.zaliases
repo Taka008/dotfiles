@@ -1,4 +1,5 @@
 alias del="trash -r"  # https://github.com/rcmdnk/trash
 alias ldd="otool -L"
 alias -g C='| pbcopy'
+alias jumanpp='docker run -i --rm --platform linux/amd64 kunlp/jumanpp-knp jumanpp'
 alias knp='docker run -i --rm --platform linux/amd64 kunlp/jumanpp-knp knp'
